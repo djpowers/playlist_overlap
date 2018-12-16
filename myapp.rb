@@ -32,7 +32,7 @@ get '/' do
   @display_tracks = {}
   sorted_track_id_counts.each do |key, value|
     track = shared_tracks.detect { |shared_track| shared_track.id == key }
-    @display_tracks["'#{track.name}' by #{track.artists.first.name}"] = value
+    @display_tracks["\"#{track.name}\" by #{track.artists.first.name}"] = value
   end
 
   erb :index
