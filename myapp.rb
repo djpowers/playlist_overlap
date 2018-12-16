@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'dotenv/load'
 require 'rspotify'
+require 'chartkick'
 
 configure :development, :test do
   require 'pry'
@@ -33,4 +34,6 @@ get '/' do
     track = shared_tracks.detect { |shared_track| shared_track.id == key }
     @display_tracks["'#{track.name}' by #{track.artists.first.name}"] = value
   end
+
+  erb :index
 end

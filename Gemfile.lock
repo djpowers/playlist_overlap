@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    chartkick (3.0.1)
     coderay (1.1.2)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
@@ -59,6 +60,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  chartkick
   dotenv
   pry
   rspotify
