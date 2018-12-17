@@ -3,4 +3,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chartkick/2.3.0/chartkick.min.js"></script>
 </head>
 
-<%= bar_chart(@display_tracks, height: '100%') %>
+<%= bar_chart(@display_tracks, height: "#{@display_tracks.count * 35 + 35}px", label: 'Occurrences', xtitle: 'Playlist Occurrences', ytitle: 'Track', messages: {empty: 'No shared tracks between these playlists'}) %>
+
+<%= bar_chart(@artists_count, height: "#{@artists_count.count * 35 + 35}px", label: 'Occurrences', xtitle: 'Playlist Occurrences', ytitle: 'Artist', messages: {empty: 'No shared artists between these playlists'}) %>
