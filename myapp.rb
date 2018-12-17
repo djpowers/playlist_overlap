@@ -1,10 +1,10 @@
 require 'sinatra'
-require 'sinatra/reloader'
 require 'dotenv/load'
 require 'rspotify'
 require 'chartkick'
 
 configure :development, :test do
+  require 'sinatra/reloader'
   require 'pry'
 end
 
