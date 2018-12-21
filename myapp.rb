@@ -9,7 +9,10 @@ configure :development, :test do
 end
 
 get '/' do
-  RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
+  send_file File.join(settings.public_folder, 'index.html') if params[:playlist_ids].nil?
+
+  authenticated = RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
+  send_file File.join(settings.public_folder, 'index.html') unless authenticated
   playlist_ids = params[:playlist_ids].split
 
   tracks = []
@@ -45,5 +48,5 @@ get '/' do
 
   @artists_count = artists_count.sort_by { |_key, value| value }.reverse.to_h
 
-  erb :index
+  erb :charts
 end
