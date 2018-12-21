@@ -5,6 +5,7 @@ gem 'sinatra'
 gem 'dotenv'
 gem 'rspotify'
 gem 'chartkick'
+gem 'thin'
 
 group :development, :test do
   gem 'pry'
